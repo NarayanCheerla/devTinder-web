@@ -11,8 +11,8 @@ const Login = () => {
   const dispatch = useDispatch();
 
   const [error, setError] = useState("");
-  const [password, setPassword] = useState("Sachin@1234");
-  const [emailId, setEmailId] = useState("sachin@test.com");
+  const [password, setPassword] = useState("Rahul@1234");
+  const [emailId, setEmailId] = useState("rahul@test.com");
 
   const handleLogin = async () => {
     try {

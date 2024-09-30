@@ -6,6 +6,8 @@ import Feed from "./components/Feed";
 import Login from "./components/Login";
 import appStore from "./utils/appStore";
 import Profile from "./components/Profile";
+import Requests from "./components/Requests";
+import Connections from "./components/Connections";
 
 function App() {
   return (
@@ -16,6 +18,8 @@ function App() {
             <Route path="/" element={<Feed />}></Route>
             <Route path="/login" element={<Login />}></Route>
             <Route path="/profile" element={<Profile />}></Route>
+            <Route path="/requests" element={<Requests />}></Route>
+            <Route path="/connections" element={<Connections />}></Route>
           </Route>
         </Routes>
       </BrowserRouter>
