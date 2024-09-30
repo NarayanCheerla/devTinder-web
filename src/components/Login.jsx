@@ -10,6 +10,7 @@ const Login = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
+  const [error, setError] = useState("");
   const [password, setPassword] = useState("Sachin@1234");
   const [emailId, setEmailId] = useState("sachin@test.com");
 
@@ -28,6 +29,7 @@ const Login = () => {
       dispatch(addUser(res.data));
       navigate("/");
     } catch (err) {
+      setError(err?.response?.data || "Error");
       console.log(err);
     }
   };
@@ -36,7 +38,7 @@ const Login = () => {
       <div className="card bg-base-300 w-96 shadow-xl">
         <div className="card-body">
           <div className="py-2">
-            <label className="form-control w-full max-w-xs my-2">
+            <label className="form-control w-full max-w-xs my-1">
               <div className="label">
                 <span className="label-text">Email ID</span>
               </div>
@@ -47,7 +49,7 @@ const Login = () => {
                 className="input input-bordered w-full max-w-xs"
               />
             </label>
-            <label className="form-control w-full max-w-xs my-2">
+            <label className="form-control w-full max-w-xs my-1">
               <div className="label">
                 <span className="label-text">Password</span>
               </div>
@@ -59,6 +61,7 @@ const Login = () => {
               />
             </label>
           </div>
+          <p className="text-red-500">{error}</p>
           <div className="card-actions justify-center">
             <button className="btn btn-primary" onClick={handleLogin}>
               Login

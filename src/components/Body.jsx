@@ -1,11 +1,12 @@
+import axios from "axios";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Outlet, useNavigate } from "react-router-dom";
+
 import NavBar from "./NavBar";
 import Footer from "./Footer";
-import axios from "axios";
-import { useDispatch, useSelector } from "react-redux";
-import { BASE_URL } from "../utils/constants";
 import { addUser } from "../utils/userSlice";
-import { useEffect } from "react";
+import { BASE_URL } from "../utils/constants";
 
 const Body = () => {
   const dispatch = useDispatch();
